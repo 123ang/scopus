@@ -1,4 +1,17 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true
-})
+module.exports = {
+  "transpileDependencies": [
+    "vuetify"
+  ],
+
+  css:{
+    extract:true
+  },
+
+  publicPath: process.env.NODE_ENV === 'production'
+  ? ''
+  : '/',
+
+  transpileDependencies: [
+    'vuetify'
+  ]
+}
