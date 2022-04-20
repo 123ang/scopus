@@ -64,7 +64,7 @@ export default {
                     if(this.result[0].login_status == "success") {
                         store.commit("IsLogin", true);
                         store.commit("Username", username);
-                        store.commit("UserID", this.result[0].ID);
+                        store.commit("UserGroup", this.result[0].user_group);
                         if(this.remember == true) {
                             store.commit("RememberUsername", username)
                             store.commit("RememberPassword", password)
@@ -98,6 +98,7 @@ export default {
 
     },
     created() {
+        
         this.url = this.HostUrl + this.ScriptUrl + "login.php"
         this.remember = this.RememberBoolean
         if(this.remember){
@@ -123,6 +124,12 @@ export default {
         },
         RememberPassword(){
             return this.$store.state.remember_password;
+        }, 
+        Username(){
+            return this.$store.state.username;
+        },
+        UserGroup(){
+            return this.$store.state.user_group;
         }
     }
 };
