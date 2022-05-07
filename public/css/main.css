@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+:root{
+    --uum-grey: #3d3d3d;
+    --uum-grey-hover: #6b6b6b;
+    --uum-blue: #2d439c;
+    --uum-blue-hover: #5a79f5;
+    
+}
+
+.btn-custom-primary{
+    text-transform: none;
+    background-color: var(--uum-blue);    
+    min-width: 90px;
+    min-height: 40px;    
+    transition: background-color .4s ease;
+}
+.btn-custom-primary:hover{
+    background: var(--uum-blue-hover);
+}
+.btn-custom-primary > * {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
