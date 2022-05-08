@@ -1,32 +1,35 @@
 <template>
-<div>
-    <div>
-        <div>
-            <label>Username</label>
-            <input type="text" id="username" v-model="username" placeholder="Username">
-        </div>       
-        <div>
-            <label style="font-weight:bold" for="password">Password:</label>            
-            <input type="password" id="password" v-model="password" v-on:keyup.enter="login(username,password)" placeholder="Password">
-        </div>   
-        <div>
-            <v-checkbox  label="Remember me" v-model="remember"></v-checkbox>   
-        </div>                               
-    </div>
-    <div>
-        <div>
-            <p v-if="feedback" class="red-text">{{ feedback }}</p>
+<div class="login-bg">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="login-body-card text-center">
+                    <h2><b>Login</b></h2>
+                    <div>
+                        <input type="text" id="username" v-model="username" placeholder="Username">
+                    </div>       
+                    <div class="position-relative remember-me">          
+                        <input type="password" id="password" v-model="password" v-on:keyup.enter="login(username,password)" placeholder="Password">
+                        <v-checkbox label="Remember me" v-model="remember"></v-checkbox>   
+                    </div>           
+                    <div class="remember-me-spacing"></div>
+                    <div>
+                        <p v-if="feedback" class="red-text">{{ feedback }}</p>
 
-            <button @click="login(username,password)" type="submit">
-                <span style="font-size:smaller;">Sign In </span>         
-            </button>
-
-            <button @click="forget">
-                <span style="font-size:smaller;"> Forget Password </span>          
-            </button>
+                        <button class="btn btn-custom-primary" @click="login(username,password)" type="submit">
+                            <b>Login</b>
+                        </button>
+                        <hr class="my-4">
+                        <a href="#" @click="forget" style="text-decoration: none;">
+                            <span>Forget Password</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>    
+</div>
 </template>
 
 <script>
@@ -138,5 +141,54 @@ export default {
 };
 </script>
 <style>
-
+.login-bg{
+    position: relative;
+    background-color: var(--uum-grey);   
+    background: url(../assets/login-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh !important;
+    width: 100%;
+}
+.login-bg .overlay{
+    background-color: var(--uum-blue);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .35;
+}
+.login-body-card{
+    position: absolute;
+    background-color: rgba(255,255,255,.85);
+    padding: 25px 50px;
+    border-radius: 4px;
+    z-index: 100;
+    width: 75%;
+    max-width: 750px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 3px 3px 10px 3px rgba(0,0,0,.15);
+}
+.login-body-card input{
+    border: 1px solid rgba(0,0,0,.15) !important;
+    padding: 0px 10px !important;
+    border-radius: 4px !important;
+    max-width: 500px;
+    margin-top: 10px !important;
+}
+.login-body-card input::placeholder{
+    color: rgba(0,0,0,.5);
+}
+.remember-me .v-input--checkbox{
+    position: absolute;
+    top: 55px;
+    left: 10%;
+}
+.remember-me-spacing{
+    margin: 50px 0;
+}
 </style>
