@@ -197,8 +197,7 @@ export default {
         }
     },
     created() {
-        store.commit("HostUrl","http://10.2.11.110/")
-        store.commit("ScriptUrl","php_script/cendiakawan/")
+     
  
         this.url = this.HostUrl + this.ScriptUrl + "userlist.php"
         this.update_usergroup()

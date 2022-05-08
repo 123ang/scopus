@@ -8,12 +8,12 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
    
-    host_url: "http://10.2.11.110/",
+    host_url: "https://analysisbursa.com/",
     is_login: false,
     remember_boolean: false,
     remember_password: "",
     remember_username: "",
-    script_url:  "php_script/cendiakawan/",
+    script_url:  "php_script/scopus/scopus/",
     user_id: "",
     username: "",
     user_group: ""

@@ -56,11 +56,13 @@ export default {
             axios.post(this.url, 
                 {
                     username: username,
-                    password: password
+                    password: password,
                 }
                 )
                 .then(response => {
                     this.result = response.data;
+                    console.log(response.data)
+                    
                     if(this.result[0].login_status == "success") {
                         store.commit("IsLogin", true);
                         store.commit("Username", username);
@@ -81,7 +83,7 @@ export default {
                         this.feedback = this.result
                     }
                     this.show = false
-           
+                    
                 })
                 
                 .catch(function (error) {
@@ -98,7 +100,8 @@ export default {
 
     },
     created() {
-        
+        store.commit("HostUrl","https://analysisbursa.com/")
+        store.commit("ScriptUrl","php_script/scopus/scopus/")
         this.url = this.HostUrl + this.ScriptUrl + "login.php"
         this.remember = this.RememberBoolean
         if(this.remember){
