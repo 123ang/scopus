@@ -14,16 +14,9 @@
             <i class="bi bi-x-circle"></i>
           </div>
           <div class="search-bar">  <!-- available class: active -->            
-            <input type="text" style="transition: all .4s ease;" placeholder="Search...">
-            <div class="search-icon"><i class="bi bi-search"></i></div>
-            <div class="search-result-box">
-              <a href="#">
-                <p>Result 1</p>
-              </a>
-              <a href="#">
-                <p>Result 2</p>
-              </a>
-            </div>
+            <input type="text" style="transition: all .4s ease;" placeholder="Search..." v-model="staff_id" v-on:keyup.enter="search_staff">
+            <div class="search-icon" @click="search_staff"><i class="bi bi-search"></i></div>
+            
           </div>
           <b class="logout-btn"><span class="logout-text">Logout</span> <i class="ms-2 bi bi-box-arrow-right"></i></b>
         </div>
@@ -36,8 +29,22 @@
 </template>
 
 <script>
+import store from './store'
 export default {
+  data() {
+    return {
+        url: "",
+        staff_id: "",
+   
+      }
+   
+    },
   methods: {
+    search_staff(){
+      store.commit("StaffID",this.staff_id)
+       this.$router.push({ name: 'StaffInformation', params: { staff_id: this.staff_id } })
+    },
+    // interface method
     async showFilterResult() {
       const div = await document.querySelector('.search-bar');
       const input = await div.querySelector('input');
@@ -367,7 +374,7 @@ body{
   width: 100%;
   top: 0;
   left: 0;
-  background: url(../assets/dashboard-bg.jpg);
+  background: url(@/assets/dashboard-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
