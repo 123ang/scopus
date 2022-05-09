@@ -148,24 +148,5 @@ export default {
 
 </script>
 <style>
-.dashboard-bg{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: url(../assets/dashboard-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-}
-.dashboard-bg .overlay{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(255,255,255,.7);
-  backdrop-filter: blur(15px);
-}
+
 </style>
