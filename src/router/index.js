@@ -3,7 +3,7 @@ import DashboardView from '../views/DashboardView.vue'
 import LoginView from '@/views/LoginView.vue'
 import store from "../store";
 import UserList from '@/views/UserList.vue'
-
+import StaffInformation from '@/views/StaffInformation.vue'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -15,6 +15,14 @@ const routes = [
     path: '/dashboard',
     name: 'DashboardView',
     component: DashboardView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/staff/:staff_id',
+    name: 'StaffInformation',
+    component: StaffInformation,
     meta: {
       requiresAuth: true
     }

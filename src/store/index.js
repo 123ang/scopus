@@ -16,7 +16,8 @@ const store = new Vuex.Store({
     script_url:  "php_script/scopus/scopus/",
     user_id: "",
     username: "",
-    user_group: ""
+    user_group: "",
+    staff_id: ""
   },
   getters: {
     
@@ -46,6 +47,9 @@ const store = new Vuex.Store({
     },
     RememberPassword(state,data){
       state.remember_password = data
+    },
+    StaffID(state,data){
+      state.staff_id = data
     }
 
       
