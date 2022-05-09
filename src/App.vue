@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <router-view style="height: 100%; padding-top: 75px; position:relative"/>
+    <router-view style="min-height:100vh; height: 100%; padding-top: 75px; position:relative"/>
  
   </div>
 </template>
@@ -93,6 +93,9 @@ export default {
 
 
 <style>
+body{
+  background-color: rgb(230, 230, 230);
+}
 /* === Navbar === */
 #navbar{
     position: fixed;
@@ -348,5 +351,34 @@ export default {
   transform: translate(115%, -50%);
   opacity: 1;
   pointer-events: auto;
+}
+
+.body-card{
+  background-color: rgba(255,255,255,.9);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 4px;
+  box-shadow: 3px 3px 6px 2px rgba(0,0,0,.1);
+}
+
+.dashboard-bg{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: url(../assets/dashboard-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.dashboard-bg .overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,.7);
+  backdrop-filter: blur(15px);
 }
 </style>

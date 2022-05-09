@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <div>
-      Total Researchers: {{ total_researchers }}
-      <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
-    </div>
-    <div>
-      Total Documents: {{ total_documents }}
-      <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
-    </div>
+    <div class="dashboard-bg"><div class="overlay"></div></div>
+    <div class="container">
+      <div class="row">
 
-    <div>
-      Average Documents: {{ average_documents }}
-      <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
-    </div>
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="body-card">
+            <h5><b>Total Researchers: {{ total_researchers }}</b></h5>
+            <hr class="my-4">
+            <apexchart type="bar" height="200px" :options="options" :series="series"></apexchart>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="body-card">
+            <h5><b>Total Documents: {{ total_documents }}</b></h5>
+            <hr class="my-4">
+            <apexchart type="bar" height="200px" :options="options" :series="series"></apexchart>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="body-card">
+            <h5><b>Average Documents: {{ average_documents }}</b></h5>
+            <hr class="my-4">
+            <apexchart type="bar" height="200px" :options="options" :series="series"></apexchart>
+          </div>
+        </div>
+
+      </div>
+    </div>    
   </div>
 </template>
 
@@ -56,8 +73,9 @@ export default {
         }, {
           x: 'category C',
           y: 13
-        }]
-      }]
+        }],
+      }],
+            
     }
    
   },
@@ -129,3 +147,6 @@ export default {
 }
 
 </script>
+<style>
+
+</style>
