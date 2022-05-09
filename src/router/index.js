@@ -1,5 +1,5 @@
 
-import HomeView from '../views/HomeView.vue'
+import DashboardView from '../views/DashboardView.vue'
 import LoginView from '@/views/LoginView.vue'
 import store from "../store";
 import UserList from '@/views/UserList.vue'
@@ -12,16 +12,16 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: HomeView,
+    path: '/dashboard',
+    name: 'DashboardView',
+    component: DashboardView,
     meta: {
       requiresAuth: true
     }
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'LoginView',
     component: LoginView
   },
   {
@@ -47,10 +47,10 @@ router.beforeEach((to, from, next) => {
     // this route requires auth, check if logged in
     // if not, redirect to login page.
     if (!store.state.is_login) {
-      next({ name: 'Login' })
+      next({ name: 'LoginView' })
     } else {
       if(to.name == 'Login') {
-        next({ name: 'Home' })
+        next({ name: 'DashboardView' })
       }
       else {
         next() // go to wherever I'm going

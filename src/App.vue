@@ -8,7 +8,7 @@
             <i class="bi bi-list"></i>
           </div>
         </div>
-        <a id="nav-logo" href="/"><img src="./assets/uum-logo.png" alt="logo"></a>
+        <a id="nav-logo" href="/dashboard"><img src="./assets/uum-logo.png" alt="logo"></a>
         <div id="nav-options">
           <div class="close-icon">
             <i class="bi bi-x-circle"></i>

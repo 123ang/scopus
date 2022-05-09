@@ -80,7 +80,7 @@ export default {
                             store.commit("RememberPassword", '')
                             store.commit("RememberBoolean", false)
                         }
-                        this.$router.push("/");
+                        this.$router.push("/dashboard");
                     }
                     else {
                         this.feedback = this.result
