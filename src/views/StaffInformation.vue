@@ -1,35 +1,39 @@
 <template>
   <div class="home">
-    <div>
-      Name: {{ name }}
-      
-    </div>
-    <div>
-      Staff ID: {{ staff_id }}
-    
-    </div>
+      <div class="dashboard-bg"><div class="overlay"></div></div>
+      <div class="container mt-5">
+          <div class="row">
+              <div class="col-12">
+                  <div class="body-card">
+                    <div class="row m-0">
 
-    <div>
-      School: {{ school }}
-    </div>
-    <div>
-      Email: {{ email }}
-    </div>
-    <div>
-      Phone: {{ phone }}
-    </div>
-    <div>
-        Scopus ID: {{ scopus_id }}
-    </div>
-    <div>
-        Number of Articles Produced: {{ documents }}
-    </div>
-    <div>
-        Citations: {{ citations }}
-    </div>
-    <div>
-        Cited By: {{ cited_by }}
-    </div>
+                        <div class="col-12 col-md-4">
+                            <div class="profile-picture mx-auto">
+                                <div class="img-border">
+                                    <img src="../assets/profile/default.png" alt="profile picture" draggable="false">
+                                </div>
+                            </div>                                
+                        </div>    
+                        <div class="col-12 col-md-8 p-4 staff-info">
+                            <h4><b>{{ name }}</b></h4>
+                            <hr>
+                            <p><b>Staff ID: </b>{{ staff_id }}</p>
+                            <p><b>School :</b>{{ school }}</p>
+                            <p><b>Email :</b>{{ email }}</p>
+                            <p><b>Phone :</b>{{ phone }}</p>
+                            <p><b>Scopus ID :</b>{{ scopus_id }}</p>
+                            <p><b>Number of Articles Produced :</b>{{ documents }}</p>
+                            <p><b>Citations :</b>{{ citations }}</p>
+                            <p><b>Cited By :</b>{{ cited_by }}</p>
+                        </div>
+
+                    </div>
+                  </div>                  
+              </div>
+          </div>
+
+      </div>
+    
   </div>
 </template>
 
@@ -110,3 +114,35 @@ export default {
 }
 
 </script>
+<style>
+    .profile-picture{
+        height: 350px;
+        width: 275px;
+        border: 1px solid rgba(0,0,0,.25);
+        border-radius: 4px;
+        padding: 7px;
+        overflow: hidden;
+    }
+    .profile-picture .img-border{
+        position: relative;
+        height: 100%;
+        width: auto;   
+        z-index: 1;
+        background-color: grey !important;
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile-picture .img-border img{
+        max-height: 350px;        
+        max-width: 275px;
+    }
+    .staff-info p{
+        margin: 10px 0;
+    }
+    .staff-info p b{
+        margin: 0 10px 0 0;
+    }
+</style>

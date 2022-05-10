@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="dashboard-bg"><div class="overlay"></div></div>
-    <div class="container">
+    <div class="container mt-5">
       <div class="row">
 
         <div class="col-12 col-md-6 col-xl-4">
