@@ -3,18 +3,19 @@
       <div class="dashboard-bg"><div class="overlay"></div></div>
       <div class="container mt-5">
           <div class="row">
+              <!-- ===== Staff Info Card ===== -->
               <div class="col-12">
                   <div class="body-card">
                     <div class="row m-0">
 
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="profile-picture mx-auto">
                                 <div class="img-border">
                                     <img src="../assets/profile/default.png" alt="profile picture" draggable="false">
                                 </div>
                             </div>                                
                         </div>    
-                        <div class="col-12 col-md-8 p-4 staff-info">
+                        <div class="col-12 col-md-6 col-lg-8 p-4 staff-info">
                             <h4><b>{{ name }}</b></h4>
                             <hr>
                             <p><b>Staff ID: </b>{{ staff_id }}</p>
@@ -22,14 +23,53 @@
                             <p><b>Email :</b>{{ email }}</p>
                             <p><b>Phone :</b>{{ phone }}</p>
                             <p><b>Scopus ID :</b>{{ scopus_id }}</p>
-                            <p><b>Number of Articles Produced :</b>{{ documents }}</p>
-                            <p><b>Citations :</b>{{ citations }}</p>
-                            <p><b>Cited By :</b>{{ cited_by }}</p>
-                            <p><b>H index:</b> {{h_index}}</p>
                         </div>
 
                     </div>
                   </div>                  
+              </div>
+
+              <!-- ===== Staff Data ===== -->
+              <div id="staff-data" class="col-12 col-lg-6">
+                  <div class="row">
+
+                      <div class="col-12 col-sm-6 col-md-4">
+                          <div class="body-card">
+                              <p><b>Number of Articles Produced</b></p>
+                              <div class="count">
+                                  <h1>{{ documents }}</h1>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-12 col-sm-6 col-md-4">
+                          <div class="body-card">
+                              <p><b>Citations</b></p>
+                              <div class="count">
+                                  <h1>{{ citations }}</h1>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-12 col-sm-6 col-md-4">
+                          <div class="body-card">
+                              <p><b>Cited By</b></p>
+                              <div class="count">
+                                  <h1>{{ cited_by }}</h1>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-12 col-sm-6 col-md-4">
+                          <div class="body-card">
+                              <p><b>H Index</b></p>
+                              <div class="count">
+                                  <h1>{{ h_index }}</h1>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
               </div>
           </div>
 
@@ -145,5 +185,21 @@ export default {
     }
     .staff-info p b{
         margin: 0 10px 0 0;
+    }
+    #staff-data p , #staff-data h1{
+        text-align: center;
+        margin: 0;
+    }
+    #staff-data .row .body-card{
+        height: 100%;        
+    }
+    #staff-data .row .body-card .count{
+        min-height: 75px;       
+    }
+    #staff-data .row .body-card .count h1{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -35px);
     }
 </style>
