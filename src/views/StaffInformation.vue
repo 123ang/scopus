@@ -25,6 +25,7 @@
                             <p><b>Number of Articles Produced :</b>{{ documents }}</p>
                             <p><b>Citations :</b>{{ citations }}</p>
                             <p><b>Cited By :</b>{{ cited_by }}</p>
+                            <p><b>H index:</b> {{h_index}}</p>
                         </div>
 
                     </div>
